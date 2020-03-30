@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count bills</title>
+</head>
+<body>
+  <H1>Count bills</H1>
+
+  <div id="app">
+    <div class="form">
+
+      <p>
+        <label>
+          Goal
+          <input type="number" v-model="goal" @input="countBills">
+        </label>
+      </p>
+
+      <p v-for="(bill, index) in bills" key="index">
+        <label>
+          {{ bill.value }}
+          <input type="number" v-model="bill.count">
+        </label>
+      </p>
+
+      <p>Optimal bills: {{ optimalBills }}</p>
+    </div>
+  </div>
+
+  <script src="./vue.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
